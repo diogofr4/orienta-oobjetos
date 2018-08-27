@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Carro
+comment0.text=\n\ Escreva\ a\ descri\u00E7\u00E3o\ da\ classe\ Carro\ aqui.\n\ \n\ @author\ (seu\ nome)\ \n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\n
+comment1.params=modelo\ marca\ ano\ cor\ qtd_portas\ preco
+comment1.target=Carro(java.lang.String,\ java.lang.String,\ int,\ java.lang.String,\ int,\ float)
+comment1.text=\n\ COnstrutor\ para\ objetos\ da\ classe\ Carro\n
+comment2.params=
+comment2.target=void\ imprime()
+comment2.text=\n\ Exemplo\ de\ m\u00E9todo\ -\ substitua\ este\ coment\u00E1rio\ pelo\ seu\ pr\u00F3prio\n\ \n\ @param\ \ y\ \ \ exemplo\ de\ um\ par\u00E2metro\ de\ m\u00E9todo\n\ @return\ \ \ \ \ a\ soma\ de\ x\ com\ y\ \n
+comment3.params=
+comment3.target=void\ acelerar()
+numComments=4
