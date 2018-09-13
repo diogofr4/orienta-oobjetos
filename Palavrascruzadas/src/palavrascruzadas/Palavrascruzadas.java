@@ -19,7 +19,7 @@ public class Palavrascruzadas {
      */
     public static void main(String[] args) throws FileNotFoundException {
         Jogo jogo= new Jogo();
-        jogo.iniciatabela();
+        jogo.menu();
         
     }
         

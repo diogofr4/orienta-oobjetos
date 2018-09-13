@@ -9,13 +9,12 @@ package palavrascruzadas;
  *
  * @author ice
  */
-public class Jogador {
+public class Jogador{
     private String nome;
-    private int palpite;
+    private String palpite;
+    private int pontuacao;
     
-    public Jogador(){
-        
-    }
+    public Jogador(){}
 
     public String getNome() {
         return nome;
@@ -25,14 +24,22 @@ public class Jogador {
         this.nome = nome;
     }
 
-    public int getPalpite() {
+    public String getPalpite() {
         return palpite;
     }
 
-    public void setPalpite(int palpite) {
+    public void setPalpite(String palpite) {
         this.palpite = palpite;
     }
     
+    public void setPontuacao(){
+        pontuacao++;
+    }
+    
+    public int getPontuacao(){
+        return this.pontuacao;
+    }
+       
     
     
 }
