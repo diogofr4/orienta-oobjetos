@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package palavrascruzadas;
-
+import java.util.*;
 /**
  *
  * @author ice
@@ -14,14 +14,18 @@ public class Jogador{
     private String palpite;
     private int pontuacao;
     
-    public Jogador(){}
+    public Jogador(){
+        this.setNome();
+    }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome() {
+        Scanner s= new Scanner(System.in);
+        System.out.println("Digite o nome do jogador: ");
+        this.nome = s.next();
     }
 
     public String getPalpite() {
