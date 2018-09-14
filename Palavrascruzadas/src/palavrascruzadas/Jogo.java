@@ -112,6 +112,7 @@ public class Jogo {
     }
 //Verifica se o palpite do jogador foi correto ou se venceu o jogo.//    
     public void verifica(int numeropalavra){
+        boolean fim=false;
         if(jogador.getPalpite().equals(this.getTabelagabarito(numeropalavra))){
             jogador.setPontuacao();
             System.out.println("Parabéns, você acertou!");
@@ -120,7 +121,13 @@ public class Jogo {
                 System.out.println("Parabéns, você venceu o jogo!");
             }
             else{
-                this.menu(numeropalavra);
+                if(numeropalavra==9 && jogador.getPontuacao()!=this.getTabelagabarito().length){
+                    fim=true;
+                    this.menu(numeropalavra,true);
+                }
+                else{
+                    this.menu(numeropalavra);
+                }
             }
         }
         else{
@@ -138,5 +145,13 @@ public class Jogo {
         joga(resposta+1);
     }   
              
-    
+    public void menu(int resposta, boolean fim){
+        int i;
+        Scanner s= new Scanner(System.in);
+        for(i=0;i<this.getTabelaresposta().length;i++){
+            System.out.println(getTabelaresposta(i));
+        }
+        System.out.println("Você chegou na última palavra, digite o número da palavra que deseja tentar adivinhar!");
+        joga(s.nextInt()-1);
+    }   
 }
