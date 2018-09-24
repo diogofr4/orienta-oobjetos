@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Bulbasaur {
+public class Bulbasaur extends Pokemons {
     
 }

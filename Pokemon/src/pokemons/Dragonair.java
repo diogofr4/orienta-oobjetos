@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author Fernanda
  */
-public class Dragonair {
+public class Dragonair extends Pokemons {
     
 }

@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author Fernanda
  */
-public class Arcanine {
+public class Arcanine extends Pokemons{
     
 }

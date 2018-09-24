@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author Fernanda
  */
-public class Gyarados {
+public class Gyarados extends Pokemons {
     
 }

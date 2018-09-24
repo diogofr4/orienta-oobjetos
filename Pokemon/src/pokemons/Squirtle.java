@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Squirtle {
+public class Squirtle extends Pokemons {
     
 }

@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author Fernanda
  */
-public class Magikarp {
+public class Magikarp extends Pokemons {
     
 }

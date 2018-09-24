@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author Fernanda
  */
-public class Dragonite {
+public class Dragonite extends Pokemons {
     
 }

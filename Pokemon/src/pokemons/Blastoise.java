@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Blastoise {
+public class Blastoise extends Pokemons {
     
 }

@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Abra {
+public class Abra extends Pokemons {
     
 }

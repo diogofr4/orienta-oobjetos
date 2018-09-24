@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Raichu {
+public class Raichu extends Pokemons {
     
 }

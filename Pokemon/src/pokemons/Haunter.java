@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Haunter {
+public class Haunter extends Pokemons {
     
 }

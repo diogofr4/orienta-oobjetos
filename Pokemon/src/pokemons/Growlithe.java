@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author Fernanda
  */
-public class Growlithe {
+public class Growlithe extends Pokemons {
     
 }

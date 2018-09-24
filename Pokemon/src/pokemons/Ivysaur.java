@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Ivysaur {
+public class Ivysaur extends Pokemons {
     
 }

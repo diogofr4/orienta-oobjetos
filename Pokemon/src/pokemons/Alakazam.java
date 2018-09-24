@@ -10,6 +10,6 @@ import pokemon.*;
  *
  * @author ice
  */
-public class Alakazam {
+public class Alakazam extends Pokemons{
     
 }

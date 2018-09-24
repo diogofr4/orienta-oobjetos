@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Pidgeot {
+public class Pidgeot extends Pokemons {
     
 }

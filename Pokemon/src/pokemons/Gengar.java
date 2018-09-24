@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Gengar {
+public class Gengar extends Pokemons {
     
 }

@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Kadabra {
+public class Kadabra extends Pokemons {
     
 }

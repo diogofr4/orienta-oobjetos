@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author Fernanda
  */
-public class Charizard {
+public class Charizard extends Pokemons {
     
 }

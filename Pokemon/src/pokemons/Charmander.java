@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author Fernanda
  */
-public class Charmander {
+public class Charmander extends Pokemons {
     
 }

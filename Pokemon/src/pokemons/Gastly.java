@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Gastly {
+public class Gastly extends Pokemons {
     
 }
