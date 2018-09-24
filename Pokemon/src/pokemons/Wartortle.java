@@ -9,6 +9,6 @@ package pokemons;
  *
  * @author ice
  */
-public class Wartortle {
+public class Wartortle extends Pokemons {
     
 }
