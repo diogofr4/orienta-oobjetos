@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pokemons;
-import pokemon.*;
+package pokemon;
 
 /**
  *
  * @author ice
  */
-public class Pidgeotto extends Pokemons {
+public class Controlador {
     
 }
