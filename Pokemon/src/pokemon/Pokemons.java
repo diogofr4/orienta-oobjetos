@@ -9,7 +9,7 @@ package pokemon;
  *
  * @author Administrador
  */
-public abstract class Pokemons {
+public abstract class Pokemons implements AcoesPokemon{
     private String nome;
     private String sexo;
     private Tipo tipo[] = new Tipo[2];
