@@ -11,8 +11,37 @@ import pokemon.*;
  * @author ice
  */
 public class Bulbasaur extends Pokemons {
+    
+    public void setTipo(){
+        this.tipo=new Tipo("Grama","Fogo","Fantasma");
+    }
+    
     @Override
     public double usarHabilidade(){return 0;};
-    @Override
-    public void evolui(){};
+    
+    public void setHabilidade(){
+        habilidade[0] = new Habilidade("Wine_Whip",35,10,tipo,100);
+        habilidade[1] = new Habilidade("Razor_Leaf",55,25,tipo,100);
+    }
+    
+    public void setNome() {
+        this.nome = "Bulbasaur";
+    }
+    
+    public void setVida() {
+        this.vida = 45;
+    }
+    
+    public void setAtaque() {
+        this.ataque = 49;
+    }
+    
+    public void setDefesa() {
+        this.defesa = 49;
+    }
+    
+     public void setEspecial(){
+        this.especial = 65;
+    }
+   
 }

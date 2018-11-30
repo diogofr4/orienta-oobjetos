@@ -5,6 +5,8 @@
  */
 package pokemon;
 
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author Administrador
@@ -14,7 +16,7 @@ public class Pokemon {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
        Jogo jogo = new Jogo();
     }
     

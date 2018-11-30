@@ -1,24 +1,32 @@
 package pokemon;
 public abstract class Pokemons implements AcoesPokemon{
     protected String nome;
-    protected String sexo;
-    protected Tipo tipo[] = new Tipo[2];
-    protected Habilidade habilidade[] = new Habilidade[4];
-    protected int tamanho;
-    protected int peso;
-    protected int captura;
+    protected Tipo tipo;
+    protected Habilidade habilidade[] = new Habilidade[1];
     protected double vida;
     protected int ataque;
     protected int defesa;
-    protected int ataque_especial;
-    protected int defesa_especial;    
+    protected int especial;
     public void morrer(){}
+    public void atacar(int i){}
     public void perdeHP(double dano){
         this.vida=this.vida-dano;
         if(this.vida<=0){
             this.vida=0;
             this.morrer();
         }
+    }
+    
+    public void setTipo(String nome, String fraqueza, String efetivo){
+        this.tipo=new Tipo(nome,fraqueza,efetivo);
+    }
+    
+    public Habilidade getHabilidade(int i){
+        return habilidade[i];
+    }
+    
+    public void setHabilidade(String nome, int ataque, int custo, Tipo tipo, int precisao, int i){
+        habilidade[i] = new Habilidade(nome,ataque,custo,tipo,precisao);
     }
 
     public String getNome() {
@@ -27,38 +35,6 @@ public abstract class Pokemons implements AcoesPokemon{
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public int getTamanho() {
-        return tamanho;
-    }
-
-    public void setTamanho(int tamanho) {
-        this.tamanho = tamanho;
-    }
-
-    public int getPeso() {
-        return peso;
-    }
-
-    public void setPeso(int peso) {
-        this.peso = peso;
-    }
-
-    public int getCaptura() {
-        return captura;
-    }
-
-    public void setCaptura(int captura) {
-        this.captura = captura;
     }
 
     public double getVida() {
@@ -85,19 +61,12 @@ public abstract class Pokemons implements AcoesPokemon{
         this.defesa = defesa;
     }
 
-    public int getAtaque_especial() {
-        return ataque_especial;
+    public int getEspecial() {
+        return especial;
     }
 
-    public void setAtaque_especial(int ataque_especial) {
-        this.ataque_especial = ataque_especial;
+    public void setEspecial(int especial) {
+        this.especial = especial;
     }
 
-    public int getDefesa_especial() {
-        return defesa_especial;
-    }
-
-    public void setDefesa_especial(int defesa_especial) {
-        this.defesa_especial = defesa_especial;
-    }
 }

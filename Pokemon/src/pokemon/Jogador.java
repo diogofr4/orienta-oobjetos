@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package pokemon;
+import pokemons.*;
 
 /**
  *
@@ -13,6 +14,8 @@ public class Jogador {
     private String nome;
     private String sexo;
     private Pokemons pokemons[] = new Pokemons[5];
+    private int qtdpokemonsderrotados = 0;   
+    private int indicePokemon;
 
     public String getNome() {
         return nome;
@@ -28,5 +31,25 @@ public class Jogador {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+    
+    public void setPokemons(int i){
+        
+    }
+    
+    public Pokemons getPokemonAtual(){
+        return pokemons[indicePokemon];
+    }
+    
+    public int getQtdpokemonsderrotados() {
+        return qtdpokemonsderrotados;
+    }
+    
+    public void setQtdpokemonsderrotados(){
+        this.qtdpokemonsderrotados = this.qtdpokemonsderrotados+1;
+    }
+    
+    public void selecionaPokemon(){
+        
     }
 }

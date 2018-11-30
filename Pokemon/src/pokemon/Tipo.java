@@ -11,9 +11,15 @@ package pokemon;
  */
 public class Tipo {
     private String nome;
-    private String [] fraqueza = new String[5];
-    private String [] efetivo = new String[5];
+    private String fraqueza;
+    private String efetivo;
 
+    public Tipo(String nome, String fraqueza, String efetivo){
+        this.setNome(nome);
+        this.setEfetivo(efetivo);
+        this.setFraqueza(fraqueza);
+    }
+        
     public String getNome() {
         return nome;
     }
@@ -22,19 +28,19 @@ public class Tipo {
         this.nome = nome;
     }
 
-    public String[] getFraqueza() {
+    public String getFraqueza() {
         return fraqueza;
     }
 
-    public void setFraqueza(String[] fraqueza) {
+    public void setFraqueza(String fraqueza) {
         this.fraqueza = fraqueza;
     }
 
-    public String[] getEfetivo() {
+    public String getEfetivo() {
         return efetivo;
     }
 
-    public void setEfetivo(String[] efetivo) {
+    public void setEfetivo(String efetivo) {
         this.efetivo = efetivo;
     }
 }

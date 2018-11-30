@@ -12,11 +12,24 @@ package pokemon;
 public class Habilidade {
     private String nome;
     private int ataque;
-    private Tipo tipo = new Tipo();
+    private int custo;
+    private Tipo tipo;
     private int precisao;
+    
+    public Habilidade(String nome, int ataque, int custo, Tipo tipo, int precisao){
+        this.setNome(nome);
+        this.setAtaque(ataque);
+        this.setCusto(custo);
+        this.setPrecisao(precisao);
+        this.setTipo(tipo);
+    }
 
     public String getNome() {
         return nome;
+    }
+    
+    public void setTipo(Tipo tipo){
+        this.tipo = tipo;
     }
 
     public void setNome(String nome) {
@@ -25,6 +38,14 @@ public class Habilidade {
 
     public int getAtaque() {
         return ataque;
+    }
+    
+    public int getCusto() {
+        return custo;
+    }
+
+    public void setCusto(int custo) {
+        this.custo = custo;
     }
 
     public void setAtaque(int ataque) {

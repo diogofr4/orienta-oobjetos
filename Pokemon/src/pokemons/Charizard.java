@@ -11,8 +11,36 @@ import pokemon.*;
  * @author Fernanda
  */
 public class Charizard extends Pokemons {
+    public void setTipo(){
+        this.tipo=new Tipo("Fogo","Agua","Grama");
+    }
+    
     @Override
     public double usarHabilidade(){return 0;};
-    @Override
-    public void evolui(){};
+    
+    public void setHabilidade(){
+        habilidade[0] = new Habilidade("Ember",40,25,tipo,100);
+        habilidade[1] = new Habilidade("Flamethrower",95,15,tipo,100);
+    }
+    
+    public void setNome() {
+        this.nome = "Charizard";
+    }
+    
+    public void setVida() {
+        this.vida = 78;
+    }
+    
+    public void setAtaque() {
+        this.ataque = 84;
+    }
+    
+    public void setDefesa() {
+        this.defesa = 78;
+    }
+    
+     public void setEspecial(){
+        this.especial = 109;
+    }
+    
 }
