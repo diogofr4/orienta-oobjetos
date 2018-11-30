@@ -1,27 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pokemon;
-
-/**
- *
- * @author Administrador
- */
 public abstract class Pokemons implements AcoesPokemon{
-    private String nome;
-    private String sexo;
-    private Tipo tipo[] = new Tipo[2];
-    private Habilidade habilidade[] = new Habilidade[4];
-    private int tamanho;
-    private int peso;
-    private int captura;
-    private int vida;
-    private int ataque;
-    private int defesa;
-    private int ataque_especial;
-    private int defesa_especial;
+    protected String nome;
+    protected String sexo;
+    protected Tipo tipo[] = new Tipo[2];
+    protected Habilidade habilidade[] = new Habilidade[4];
+    protected int tamanho;
+    protected int peso;
+    protected int captura;
+    protected double vida;
+    protected int ataque;
+    protected int defesa;
+    protected int ataque_especial;
+    protected int defesa_especial;    
+    public void morrer(){}
+    public void perdeHP(double dano){
+        this.vida=this.vida-dano;
+        if(this.vida<=0){
+            this.vida=0;
+            this.morrer();
+        }
+    }
 
     public String getNome() {
         return nome;
@@ -63,7 +61,7 @@ public abstract class Pokemons implements AcoesPokemon{
         this.captura = captura;
     }
 
-    public int getVida() {
+    public double getVida() {
         return vida;
     }
 

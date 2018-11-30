@@ -11,14 +11,8 @@ import pokemon.*;
  * @author ice
  */
 public class Pidgeot extends Pokemons {
-        @Override
-    public double Atacar(){return 0;};
     @Override
     public double usarHabilidade(){return 0;};
-    @Override
-    public void morrer(){};
-    @Override
-    public void perdeHP(){};
     @Override
     public void evolui(){};
 }

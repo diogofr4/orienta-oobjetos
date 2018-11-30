@@ -4,30 +4,40 @@
  * and open the template in the editor.
  */
 package pokemon;
+import java.util.*;
 
-/**
+/**'
  *
  * @author Administrador
  */
 public class Jogo {
     private Jogador jogador[] = new Jogador[2];
-    private Dados dados = new Dados();
-    private int dificuldade;
-
-    public Dados getDados() {
-        return dados;
+    public Jogo(){
+        this.setJogador();
     }
-
-    public void setDados(Dados dados) {
-        this.dados = dados;
+    public void setJogador(){
+        Scanner s= new Scanner(System.in);
+        int i=0;
+        while(i < 2){
+            this.jogador[i] = new Jogador();
+            System.out.println("Digite o nome do jogador "+ (i+1) +":");
+            jogador[i].setNome(s.next());
+            System.out.println("Digite o sexo do jogador "+ (i+1) +":");
+            jogador[i].setSexo(s.next());
+            i++;
+        }
     }
-
-    public int getDificuldade() {
-        return dificuldade;
+    
+    public void setPokemons(){
+        
     }
-
-    public void setDificuldade(int dificuldade) {
-        this.dificuldade = dificuldade;
+    
+    public void atacar(){
+        int indice;
+        Scanner s= new Scanner(System.in);
+        System.out.println("Digite o número da habilidade desejada: ");
+        indice = s.nextInt();
+        
     }
     
 }

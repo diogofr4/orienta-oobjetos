@@ -10,9 +10,6 @@ package pokemon;
  * @author ice
  */
 public interface AcoesPokemon {
-    public double Atacar();
     public double usarHabilidade();
-    public void morrer();
-    public void perdeHP();
-    public void evolui();
+    
 }
