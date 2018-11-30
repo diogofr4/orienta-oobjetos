@@ -18,6 +18,7 @@ public class Pokemon {
      */
     public static void main(String[] args) throws FileNotFoundException {
        Jogo jogo = new Jogo();
+       jogo.iniciajogo();
     }
     
 }

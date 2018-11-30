@@ -14,7 +14,17 @@ public class Haunter extends Pokemons {
     public void setTipo(){
         this.tipo=new Tipo("Fantasma","Nada","Grama");
     }
-    
+
+    public Haunter() {
+        this.setAtaque();
+        this.setDefesa();
+        this.setEspecial();
+        this.setNome();
+        this.setTipo();
+        this.setVida();
+        this.setHabilidade();
+    }
+      
     @Override
     public double usarHabilidade(){return 0;};
     

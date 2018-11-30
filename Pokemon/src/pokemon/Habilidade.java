@@ -28,6 +28,10 @@ public class Habilidade {
         return nome;
     }
     
+    public Tipo getTipo(){
+        return this.tipo;
+    }
+    
     public void setTipo(Tipo tipo){
         this.tipo = tipo;
     }

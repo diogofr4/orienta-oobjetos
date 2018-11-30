@@ -1,20 +1,53 @@
 package pokemon;
+
+import java.util.*;
+
 public abstract class Pokemons implements AcoesPokemon{
     protected String nome;
     protected Tipo tipo;
-    protected Habilidade habilidade[] = new Habilidade[1];
+    protected Habilidade habilidade[] = new Habilidade[2];
     protected double vida;
     protected int ataque;
     protected int defesa;
     protected int especial;
-    public void morrer(){}
-    public void atacar(int i){}
-    public void perdeHP(double dano){
-        this.vida=this.vida-dano;
+    public double atacar(int habil,Jogador atacante,Jogador defensor){
+        Random ran = new Random();
+        int r = ran.nextInt(106);
+        double r2 = (ran.nextInt(16) + 85);
+        double t = 0;
+        double bonus = 1;
+        if(atacante.getPokemonAtual().getHabilidade(habil).getTipo().getEfetivo().equals(defensor.getPokemonAtual().getTipo().getNome())){
+            bonus = 1.5;
+        }
+        if(r<this.getHabilidade(habil).getPrecisao()){
+            t = (((this.getHabilidade(habil).getAtaque()*(atacante.getPokemonAtual().getAtaque()/defensor.getPokemonAtual().getDefesa()))/5)+2)*((r2/100)*bonus);
+            atacante.getPokemonAtual().gastaEspecial(this.getHabilidade(habil).getCusto());
+            if(bonus>1){
+                System.out.println("Foi super efetivo!");
+            }
+        }
+        if(t==0){
+            System.out.println("O ataque falhou!");
+        }
+        return t;
+    }
+    
+    public Tipo getTipo(){
+        return this.tipo;
+    }
+    
+    public boolean verificaMorte(){
+        boolean i = false;
         if(this.vida<=0){
             this.vida=0;
-            this.morrer();
+            i=true;
         }
+        return i;
+    }
+    
+    public void perdeHP(double dano){
+        this.vida=this.vida-dano;
+        
     }
     
     public void setTipo(String nome, String fraqueza, String efetivo){
@@ -67,6 +100,10 @@ public abstract class Pokemons implements AcoesPokemon{
 
     public void setEspecial(int especial) {
         this.especial = especial;
+    }
+    
+    public void gastaEspecial(int gasto){
+        this.especial = this.especial-gasto;
     }
 
 }

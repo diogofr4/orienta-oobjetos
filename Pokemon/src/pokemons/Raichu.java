@@ -14,6 +14,16 @@ public class Raichu extends Pokemons {
     public void setTipo(){
         this.tipo=new Tipo("Eletrico","Agua","Grama");
     }
+
+    public Raichu() {
+        this.setAtaque();
+        this.setDefesa();
+        this.setEspecial();
+        this.setNome();
+        this.setTipo();
+        this.setVida();
+        this.setHabilidade();
+    }
     
     @Override
     public double usarHabilidade(){return 0;};

@@ -15,6 +15,16 @@ public class Pikachu extends Pokemons {
         this.tipo=new Tipo("Eletrico","Agua","Grama");
     }
     
+    public Pikachu() {
+        this.setAtaque();
+        this.setDefesa();
+        this.setEspecial();
+        this.setNome();
+        this.setTipo();
+        this.setVida();
+        this.setHabilidade();
+    }
+    
     @Override
     public double usarHabilidade(){return 0;};
     

@@ -12,6 +12,16 @@ import pokemon.*;
  */
 public class Bulbasaur extends Pokemons {
     
+    public Bulbasaur(){
+        this.setAtaque();
+        this.setDefesa();
+        this.setEspecial();
+        this.setNome();
+        this.setTipo();
+        this.setVida();
+        this.setHabilidade();
+    }
+    
     public void setTipo(){
         this.tipo=new Tipo("Grama","Fogo","Fantasma");
     }

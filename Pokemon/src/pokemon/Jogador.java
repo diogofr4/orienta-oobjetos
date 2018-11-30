@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package pokemon;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pokemons.*;
 
 /**
@@ -33,8 +38,21 @@ public class Jogador {
         this.sexo = sexo;
     }
     
-    public void setPokemons(int i){
-        
+    public void setPokemons(String nomepokemon, int j){
+        try {
+            try {
+                try {
+                    pokemons[j]=(Pokemons) Class.forName("pokemons."+nomepokemon).getConstructor().newInstance();
+                } catch (NoSuchMethodException | SecurityException ex) {
+                    Logger.getLogger(Jogador.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+                Logger.getLogger(Jogador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Jogador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("Pokemon selecionado!");
     }
     
     public Pokemons getPokemonAtual(){
@@ -49,7 +67,27 @@ public class Jogador {
         this.qtdpokemonsderrotados = this.qtdpokemonsderrotados+1;
     }
     
+    public void imprimePokemons(){
+        for(int i=0;i<5;i++){
+            System.out.println(i+". Pokemon: "+pokemons[i].getNome()+" Tipo: "+pokemons[i].getTipo().getNome()+" Vida: "+pokemons[i].getVida());
+        }
+    }
+    
     public void selecionaPokemon(){
+        int i=-1;
+        Scanner s = new Scanner(System.in);
+        while(i==-1){
+            System.out.println(this.getNome()+" selecione o pokemon que irá batalhar.");
+            this.imprimePokemons();
+            i = s.nextInt();
+            if(this.pokemons[i].getVida()==0 || i<0 || i > 5){
+                System.out.println("Este pokemon não pode ser selecionado!");
+                i=-1;
+            }
+            else{
+                this.indicePokemon=i;
+            }
+        }
         
     }
 }

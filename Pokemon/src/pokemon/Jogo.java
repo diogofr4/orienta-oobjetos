@@ -17,6 +17,7 @@ public class Jogo {
     public Jogo() throws FileNotFoundException{
         this.setJogador();
     }
+    
     public void setJogador() throws FileNotFoundException{
         Scanner s= new Scanner(System.in);
         int i=0;
@@ -27,11 +28,13 @@ public class Jogo {
             jogador[i].setNome(s.next());
             System.out.println("Digite o sexo do jogador "+ (i+1) +":");
             jogador[i].setSexo(s.next());
-            while(j<4){
+            while(j<5){
                 System.out.println(jogador[i].getNome()+" selecione seu pokemon (5 necessários): ");
                 controlador.imprimelistapokemons();
-                jogador[i].setPokemons(s.nextInt());
-            }    
+                jogador[i].setPokemons(controlador.getnomepokemon(s.nextInt()), j);
+                j++;
+            }
+            j=0;
             i++;
         }
     }
@@ -45,10 +48,12 @@ public class Jogo {
         i=0;
         
         while(jogador[i].getQtdpokemonsderrotados()<3 && jogador[i+1].getQtdpokemonsderrotados()<3){
-            i=0;
-            controlador.menuCombate(jogador[i]);
+            controlador.menuCombate(jogador[i],jogador[i+1]);
             i++;
-            controlador.menuCombate(jogador[i]);
+            if(jogador[i].getQtdpokemonsderrotados()<3){
+                controlador.menuCombate(jogador[i],jogador[i-1]);
+            }
+            i=0;
         }
         this.vitoria();
     }

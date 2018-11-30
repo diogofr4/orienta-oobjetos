@@ -14,6 +14,16 @@ public class Venusaur extends Pokemons {
     public void setTipo(){
         this.tipo=new Tipo("Grama","Fogo","Fantasma");
     }
+
+    public Venusaur() {
+        this.setAtaque();
+        this.setDefesa();
+        this.setEspecial();
+        this.setNome();
+        this.setTipo();
+        this.setVida();
+        this.setHabilidade();
+    }
     
     @Override
     public double usarHabilidade(){return 0;};
@@ -23,4 +33,23 @@ public class Venusaur extends Pokemons {
         habilidade[1] = new Habilidade("Razor_Leaf",55,25,tipo,100);
     }
    
+    public void setNome() {
+        this.nome = "Venusaur";
+    }
+    
+    public void setVida() {
+        this.vida = 80;
+    }
+    
+    public void setAtaque() {
+        this.ataque = 82;
+    }
+    
+    public void setDefesa() {
+        this.defesa = 83;
+    }
+    
+     public void setEspecial(){
+        this.especial = 100;
+    }
 }

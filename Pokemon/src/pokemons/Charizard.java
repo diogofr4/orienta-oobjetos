@@ -17,6 +17,16 @@ public class Charizard extends Pokemons {
     
     @Override
     public double usarHabilidade(){return 0;};
+
+    public Charizard() {
+        this.setAtaque();
+        this.setDefesa();
+        this.setEspecial();
+        this.setNome();
+        this.setTipo();
+        this.setVida();
+        this.setHabilidade();
+    }
     
     public void setHabilidade(){
         habilidade[0] = new Habilidade("Ember",40,25,tipo,100);

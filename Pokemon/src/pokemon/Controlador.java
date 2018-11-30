@@ -8,6 +8,7 @@ package pokemon;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.text.DecimalFormat;
 import java.util.*;
 
 /**
@@ -20,10 +21,6 @@ public class Controlador {
         this.setlistaPokemons();
     }
     
-    public void setlistaHabilidades(){
-        
-    }
-    
     public void setlistaPokemons() throws FileNotFoundException{
         int i,j;
         Scanner pokemons = new Scanner(new BufferedReader(new FileReader("pokemons.txt")));
@@ -33,29 +30,61 @@ public class Controlador {
         }
     }
     
+    public String[][] getListapokemons(){
+        return listapokemons;
+    }
+    
+    public String getnomepokemon(int i){
+        return listapokemons[i][1];
+    }
+    
     public void imprimelistapokemons() throws FileNotFoundException{
         int i,j;
-        for (i = 0, j=0;i<listapokemons.length;i++){
+        for (i = 0, j=0;i<listapokemons.length-1;i++){
             System.out.println(listapokemons[i][j]+". "+listapokemons[i][j+1]);
         }
     }
     
-    public void menuCombate(Jogador jogador){
+    public void menuCombate(Jogador atacante, Jogador defensor){
         int i=0;
         int j=0;
+        int aux=-1;
+        DecimalFormat formatador = new DecimalFormat("0.00");
         Scanner s = new Scanner(System.in);
-        System.out.println(jogador.getNome()+" digite o número da opção desejada:");
-        System.out.println((i+1)+"- Habilidades");
-        System.out.println((i+2)+"- Esperar");
+        System.out.println("Pokemon adversário: "+defensor.getPokemonAtual().getNome()+" Vida: "+formatador.format(defensor.getPokemonAtual().getVida()));
+        System.out.println("Pokemon: "+atacante.getPokemonAtual().getNome()+" Vida: "+formatador.format(atacante.getPokemonAtual().getVida())+" PP: "+atacante.getPokemonAtual().getEspecial());
+        System.out.println(atacante.getNome()+" digite o número da opção desejada:");
+        System.out.println(i+"- Habilidades");
+        System.out.println((i+1)+"- Esperar");
         i = s.nextInt();
-        if(i==1){
-            System.out.println(jogador.getNome()+" digite o número da opção desejada:");
-            while(j<2){
-                System.out.println((j+1)+"- "+jogador.getPokemonAtual().getHabilidade(j).getNome());  
-                j++;
+        if(i==0 && (atacante.getPokemonAtual().getEspecial()>atacante.getPokemonAtual().getHabilidade(0).getCusto() || atacante.getPokemonAtual().getEspecial()>atacante.getPokemonAtual().getHabilidade(1).getCusto())){
+            System.out.println(atacante.getNome()+" digite o número da opção desejada:");
+            while(aux==-1){
+                while(j<2){
+                    System.out.println(j+"- "+atacante.getPokemonAtual().getHabilidade(j).getNome()+" Gasto: "+atacante.getPokemonAtual().getHabilidade(j).getCusto());  
+                    j++;
+                }
+                j = s.nextInt();
+                if(atacante.getPokemonAtual().getHabilidade(j).getCusto()<atacante.getPokemonAtual().getEspecial()){
+                    aux=0;
+                }
+                else{
+                    System.out.println("Você não possui PP suficientes para usar esta habilidade!");
+                    j=0;
+                }
             }
-            j = s.nextInt();
-            jogador.getPokemonAtual().atacar(j);
+           
+            defensor.getPokemonAtual().perdeHP(atacante.getPokemonAtual().atacar(j,atacante,defensor));
+            if(defensor.getPokemonAtual().verificaMorte()){
+                System.out.println(defensor.getNome()+" seu pokemon desmaiou!");
+                defensor.setQtdpokemonsderrotados();
+                if(defensor.getQtdpokemonsderrotados()<3){
+                    defensor.selecionaPokemon();
+                }
+            }
+        }
+        if(atacante.getPokemonAtual().getEspecial()<atacante.getPokemonAtual().getHabilidade(0).getCusto() && atacante.getPokemonAtual().getEspecial()<atacante.getPokemonAtual().getHabilidade(1).getCusto()){
+            System.out.println(atacante.getNome()+" você não possui PP suficiente para usar habilidades! Passando a vez para o próximo jogador!");
         }
     }
 }

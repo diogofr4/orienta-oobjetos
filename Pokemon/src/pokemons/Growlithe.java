@@ -11,10 +11,20 @@ import pokemon.*;
  * @author Fernanda
  */
 public class Growlithe extends Pokemons {
-        public void setTipo(){
+    public void setTipo(){
         this.tipo=new Tipo("Fogo","Agua","Grama");
     }
-    
+
+    public Growlithe() {
+        this.setAtaque();
+        this.setDefesa();
+        this.setEspecial();
+        this.setNome();
+        this.setTipo();
+        this.setVida();
+        this.setHabilidade();
+    }
+       
     @Override
     public double usarHabilidade(){return 0;};
     
