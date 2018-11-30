@@ -26,7 +26,7 @@ public class Magikarp extends Pokemons {
     }
     
     @Override
-    public double usarHabilidade(){return 0;};
+    public double atacar(){return 0;};
     
     public void setHabilidade(){
         habilidade[0] = new Habilidade("Splash",0,40,tipo,0);

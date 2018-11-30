@@ -14,7 +14,10 @@ import java.util.*;
 public class Jogo {
     private Jogador jogador[] = new Jogador[2];
     private Controlador controlador = new Controlador();
-    public Jogo() throws FileNotFoundException{
+    
+    public Jogo(Jogador jogador1,Jogador jogador2) throws FileNotFoundException{
+        this.jogador[0]=jogador1;
+        this.jogador[1]=jogador2;
         this.setJogador();
     }
     
@@ -23,11 +26,6 @@ public class Jogo {
         int i=0;
         int j=0;
         while(i < 2){
-            this.jogador[i] = new Jogador();
-            System.out.println("Digite o nome do jogador "+ (i+1) +":");
-            jogador[i].setNome(s.next());
-            System.out.println("Digite o sexo do jogador "+ (i+1) +":");
-            jogador[i].setSexo(s.next());
             while(j<5){
                 System.out.println(jogador[i].getNome()+" selecione seu pokemon (5 necessários): ");
                 controlador.imprimelistapokemons();

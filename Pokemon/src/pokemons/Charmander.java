@@ -28,7 +28,7 @@ public class Charmander extends Pokemons {
     
     
     @Override
-    public double usarHabilidade(){return 0;};
+    public double atacar(){return 0;};
     
     public void setHabilidade(){
         habilidade[0] = new Habilidade("Ember",40,25,tipo,100);

@@ -86,5 +86,6 @@ public class Controlador {
         if(atacante.getPokemonAtual().getEspecial()<atacante.getPokemonAtual().getHabilidade(0).getCusto() && atacante.getPokemonAtual().getEspecial()<atacante.getPokemonAtual().getHabilidade(1).getCusto()){
             System.out.println(atacante.getNome()+" você não possui PP suficiente para usar habilidades! Passando a vez para o próximo jogador!");
         }
+        atacante.getPokemonAtual().gastaEspecial(-5);
     }
 }

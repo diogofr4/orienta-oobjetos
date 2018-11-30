@@ -17,8 +17,7 @@ public class Pokemon {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
-       Jogo jogo = new Jogo();
-       jogo.iniciajogo();
+       
     }
     
 }

@@ -26,7 +26,7 @@ public class Pidgey extends Pokemons {
     }
     
     @Override
-    public double usarHabilidade(){return 0;};
+    public double atacar(){return 0;};
     
     public void setHabilidade(){
         habilidade[0] = new Habilidade("Gust",40,35,tipo,100);

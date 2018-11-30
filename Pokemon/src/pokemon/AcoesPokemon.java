@@ -10,6 +10,6 @@ package pokemon;
  * @author ice
  */
 public interface AcoesPokemon {
-    public double usarHabilidade();
+    public double atacar();
     
 }

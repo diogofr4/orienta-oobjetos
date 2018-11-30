@@ -16,7 +16,7 @@ public class Charizard extends Pokemons {
     }
     
     @Override
-    public double usarHabilidade(){return 0;};
+    public double atacar(){return 0;};
 
     public Charizard() {
         this.setAtaque();

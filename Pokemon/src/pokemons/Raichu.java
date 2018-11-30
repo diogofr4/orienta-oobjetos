@@ -26,7 +26,7 @@ public class Raichu extends Pokemons {
     }
     
     @Override
-    public double usarHabilidade(){return 0;};
+    public double atacar(){return 0;};
     
     public void setHabilidade(){
         habilidade[0] = new Habilidade("ThunderShock",40,30,tipo,100);

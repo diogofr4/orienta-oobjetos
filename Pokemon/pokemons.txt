@@ -11,4 +11,4 @@ Pidgeotto
 Pidgey
 Pikachu
 Raichu
-Vanusaur
+Venusaur

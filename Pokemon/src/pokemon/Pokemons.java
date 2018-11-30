@@ -20,7 +20,7 @@ public abstract class Pokemons implements AcoesPokemon{
             bonus = 1.5;
         }
         if(r<this.getHabilidade(habil).getPrecisao()){
-            t = (((this.getHabilidade(habil).getAtaque()*(atacante.getPokemonAtual().getAtaque()/defensor.getPokemonAtual().getDefesa()))/5)+2)*((r2/100)*bonus);
+            t = (((this.getHabilidade(habil).getAtaque()*(atacante.getPokemonAtual().getAtaque()/defensor.getPokemonAtual().getDefesa()))/10)+2)*((r2/100)*bonus);
             atacante.getPokemonAtual().gastaEspecial(this.getHabilidade(habil).getCusto());
             if(bonus>1){
                 System.out.println("Foi super efetivo!");

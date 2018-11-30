@@ -22,6 +22,16 @@ public class Jogador {
     private int qtdpokemonsderrotados = 0;   
     private int indicePokemon;
 
+    public Jogador() {
+    }
+
+    public Jogador(String nome, String sexo) {
+        this.nome = nome;
+        this.sexo = sexo;
+    }
+    
+    
+    
     public String getNome() {
         return nome;
     }
@@ -88,6 +98,6 @@ public class Jogador {
                 this.indicePokemon=i;
             }
         }
-        
+
     }
 }

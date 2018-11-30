@@ -26,11 +26,11 @@ public class Gyarados extends Pokemons {
     }
     
     @Override
-    public double usarHabilidade(){return 0;};
+    public double atacar(){return 0;};
     
     public void setHabilidade(){
-        habilidade[0] = new Habilidade("Hydro_Pump",120,5,tipo,80);
-        habilidade[1] = new Habilidade("Surf",95,15,tipo,100);
+        habilidade[0] = new Habilidade("Hydro_Pump",80,5,tipo,80);
+        habilidade[1] = new Habilidade("Surf",50,15,tipo,100);
     }
     
     public void setNome() {
