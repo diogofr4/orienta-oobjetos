@@ -27,17 +27,21 @@ public class Jogo {
         int j=0;
         while(i < 2){
             while(j<5){
-                System.out.println(jogador[i].getNome()+" selecione seu pokemon (5 necessários): ");
+                controlador.selecionaPokemon(jogador[i].getNome());
                 controlador.imprimelistapokemons();
-                jogador[i].setPokemons(controlador.getnomepokemon(s.nextInt()), j);
-                j++;
+                int k = s.nextInt();
+                if(k >= 0 && k <=13){
+                    jogador[i].setPokemons(controlador.getnomepokemon(k), j);
+                    j++;
+                }
+                System.out.println("Valor inválido! Digite um numero de 0 á 13: ");
             }
             j=0;
             i++;
         }
     }
     
-    public void iniciajogo(){
+    public void iniciajogo() throws FileNotFoundException{
         int i=0;
         while(i<2){
             jogador[i].selecionaPokemon();
@@ -60,7 +64,7 @@ public class Jogo {
         int i=0;
         while(i<2){
             if(jogador[i].getQtdpokemonsderrotados()<3){
-                System.out.println("Parabéns "+jogador[i].getNome()+" você venceu!");
+                controlador.parabensJogador(jogador[i].getNome());
             }
             i++;
         }

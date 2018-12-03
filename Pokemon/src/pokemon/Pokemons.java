@@ -1,8 +1,8 @@
 package pokemon;
 
+import java.io.FileNotFoundException;
 import java.util.*;
-
-public abstract class Pokemons implements AcoesPokemon{
+public abstract class Pokemons implements AcoesPokemon {
     protected String nome;
     protected Tipo tipo;
     protected Habilidade habilidade[] = new Habilidade[2];
@@ -10,7 +10,8 @@ public abstract class Pokemons implements AcoesPokemon{
     protected int ataque;
     protected int defesa;
     protected int especial;
-    public double atacar(int habil,Jogador atacante,Jogador defensor){
+    public double atacar(int habil,Jogador atacante,Jogador defensor) throws FileNotFoundException{
+        Controlador controlador = new Controlador();
         Random ran = new Random();
         int r = ran.nextInt(106);
         double r2 = (ran.nextInt(16) + 85);
@@ -23,11 +24,11 @@ public abstract class Pokemons implements AcoesPokemon{
             t = (((this.getHabilidade(habil).getAtaque()*(atacante.getPokemonAtual().getAtaque()/defensor.getPokemonAtual().getDefesa()))/10)+2)*((r2/100)*bonus);
             atacante.getPokemonAtual().gastaEspecial(this.getHabilidade(habil).getCusto());
             if(bonus>1){
-                System.out.println("Foi super efetivo!");
+                controlador.ataqueEfetivo();
             }
         }
         if(t==0){
-            System.out.println("O ataque falhou!");
+            controlador.ataqueFalho();
         }
         return t;
     }

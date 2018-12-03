@@ -45,7 +45,7 @@ public class Controlador {
         }
     }
     
-    public void menuCombate(Jogador atacante, Jogador defensor){
+    public void menuCombate(Jogador atacante, Jogador defensor) throws FileNotFoundException{
         int i=0;
         int j=0;
         int aux=-1;
@@ -57,7 +57,23 @@ public class Controlador {
         System.out.println(i+"- Habilidades");
         System.out.println((i+1)+"- Esperar");
         i = s.nextInt();
-        if(i==0 && (atacante.getPokemonAtual().getEspecial()>atacante.getPokemonAtual().getHabilidade(0).getCusto() || atacante.getPokemonAtual().getEspecial()>atacante.getPokemonAtual().getHabilidade(1).getCusto())){
+        if(i==0){
+            opcaoHabilidadeEsperar(atacante,defensor);       
+        }
+        if(i==1){
+            menuCombate(atacante,defensor);
+        }
+        if(i != 0 && i != 1){
+               valorInvalido(atacante, defensor);
+            }
+        }
+    public void opcaoHabilidadeEsperar(Jogador atacante, Jogador defensor) throws FileNotFoundException{
+       int i=0;
+       int j=0;
+       int aux=-1;
+       DecimalFormat formatador = new DecimalFormat("0.00");
+       Scanner s = new Scanner(System.in);
+       if(i==0 && (atacante.getPokemonAtual().getEspecial()>atacante.getPokemonAtual().getHabilidade(0).getCusto() || atacante.getPokemonAtual().getEspecial()>atacante.getPokemonAtual().getHabilidade(1).getCusto())){
             System.out.println(atacante.getNome()+" digite o número da opção desejada:");
             while(aux==-1){
                 while(j<2){
@@ -65,6 +81,13 @@ public class Controlador {
                     j++;
                 }
                 j = s.nextInt();
+                if(j != 0 && j != 1){
+                    {
+                        do{
+                           j = habilidadeInvalida();
+                        }while(j != 0 && j != 1);
+                    }
+                }
                 if(atacante.getPokemonAtual().getHabilidade(j).getCusto()<atacante.getPokemonAtual().getEspecial()){
                     aux=0;
                 }
@@ -87,5 +110,46 @@ public class Controlador {
             System.out.println(atacante.getNome()+" você não possui PP suficiente para usar habilidades! Passando a vez para o próximo jogador!");
         }
         atacante.getPokemonAtual().gastaEspecial(-5);
-    }
+   }
+   public int habilidadeInvalida(){
+       int j;
+       Scanner s = new Scanner(System.in);
+       System.out.println("Valor invalido, digite 0 ou 1: ");
+       j = s.nextInt();
+       if( j == 1){
+           return 1;
+       }
+       if( j == 0){
+           return 0;   
+       }
+       return 2;
+   } 
+   public void valorInvalido(Jogador atacante, Jogador defensor) throws FileNotFoundException{
+       int i;
+       Scanner s = new Scanner(System.in);
+       System.out.println("Valor invalido! Digite 0 ou 1:");
+       i = s.nextInt();
+       if(i != 0 && i != 1){
+           valorInvalido(atacante, defensor);
+       }
+       if(i==1){
+            menuCombate(atacante, defensor);
+        }
+       if(i==0){
+            opcaoHabilidadeEsperar(atacante, defensor);
+
+       }
+   }
+   public void ataqueFalho(){
+       System.out.println("O ataque falhou!");
+   }
+   public void ataqueEfetivo(){
+       System.out.println("Foi super efetivo!");
+   }
+   public void selecionaPokemon(String nomeJogador){
+       System.out.println(nomeJogador+" selecione seu pokemon (5 necessários): ");
+   }
+   public void parabensJogador(String nomejogador){
+       System.out.println("Parabéns "+ nomejogador+ " você venceu!");
+   }
 }

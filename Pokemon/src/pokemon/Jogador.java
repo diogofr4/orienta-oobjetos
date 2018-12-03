@@ -21,7 +21,8 @@ public class Jogador {
     private Pokemons pokemons[] = new Pokemons[5];
     private int qtdpokemonsderrotados = 0;   
     private int indicePokemon;
-
+ 
+    
     public Jogador() {
     }
 
@@ -84,6 +85,7 @@ public class Jogador {
     }
     
     public void selecionaPokemon(){
+        
         int i=-1;
         Scanner s = new Scanner(System.in);
         while(i==-1){
